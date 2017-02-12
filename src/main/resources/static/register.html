@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+
+</head>
+<body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+<script type="text/javascript" src="/scripts/registration.controller.js"></script>
+<ul>
+    <li><a href="/">Home</a></li>
+</ul>
+<div ng-app="App">
+    <div ng-controller="RegistrationController">
+        <ul>
+            <li>
+                <label>User name:
+                    <input type="text" ng-model="username">
+                </label>
+            </li>
+            <li>
+                <label>Password:
+                    <input type="password" ng-model="password">
+                </label>
+            </li>
+            <li>
+                <label>Phone number:
+                    <input type="text" ng-model="phoneNumber">
+                </label>
+            </li>
+            <li>
+                <label>Monthly salary:
+                    <input type="number" ng-model="monthlySalary">
+                </label>
+            </li>
+            <li>
+                <label>Liabilities:
+                    <input type="number" ng-model="liabilities">
+                </label>
+            </li>
+            <li>
+                <label>Birthdate:
+                    <ul>
+                        <li>
+                            <label>Birth day:
+                                <input type="number" ng-model="birthDay">
+                            </label>
+                        </li>
+                        <li>
+                            <label>Birth month:
+                                <input type="number" ng-model="birthMonth">
+                            </label>
+                        </li>
+                        <li>
+                            <label>Birth year:
+                                <input type="number" ng-model="birthYear">
+                            </label>
+                        </li>
+                    </ul>
+                </label>
+            </li>
+        </ul>
+        <button ng-click="register()" type="button">Register</button>
+        <h4 ng-if="registerMessage">{{registerMessage}}</h4>
+    </div>
+</div>
+</body>
+</html>

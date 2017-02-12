@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script type="text/javascript" src="/scripts/profile.controller.js"></script>
+</head>
+<body>
+<ul>
+    <li><a href="/logout">Logout</a></li>
+</ul>
+<div ng-app="App">
+    <div ng-controller="ProfileController">
+        <ul>
+            <li>
+                <label>User name:
+                    <input type="text" ng-model="username">
+                </label>
+                <button ng-show="userData.name !== username" ng-click="saveUsername()" type="button">Save</button>
+                <h4 ng-if="usernameMessage">{{usernameMessage}}</h4>
+            </li>
+            <!--<li>-->
+            <!--<label>Password:-->
+            <!--<input type="text" ng-model="password">-->
+            <!--</label>-->
+            <!--<button ng-show="userData.password !== password" ng-click="savePassword()" type="button">Save</button>-->
+            <!--<h4 ng-if="passwordMessage">{{passwordMessage}}</h4>-->
+            <!--</li>-->
+            <li>
+                <label>Phone number:
+                    <input type="text" ng-model="phoneNumber">
+                </label>
+                <button ng-show="userData.phoneNumber !== phoneNumber" ng-click="savePhoneNumber()" type="button">Save
+                </button>
+                <h4 ng-if="phoneNumberMessage">{{phoneNumberMessage}}</h4>
+            </li>
+            <li>
+                <label>Monthly salary:
+                    <input type="number" ng-model="monthlySalary">
+                </label>
+                <button ng-show="userData.monthlySalary !== monthlySalary" ng-click="saveMonthlySalary()" type="button">
+                    Save
+                </button>
+                <h4 ng-if="monthlySalaryMessage">{{monthlySalaryMessage}}</h4>
+            </li>
+            <li>
+                <label>Liabilities:
+                    <input type="number" ng-model="liabilities">
+                </label>
+                <button ng-show="userData.liabilities !== liabilities" ng-click="saveLiabilities()" type="button">Save
+                </button>
+                <h4 ng-if="liabilitiesMessage">{{liabilitiesMessage}}</h4>
+            </li>
+            <li>
+                <label>Birthdate:
+                    <ul>
+                        <li>
+                            <label>Birth day:
+                                <input type="number" ng-model="birthDay">
+                            </label>
+                        </li>
+                        <li>
+                            <label>Birth month:
+                                <input type="number" ng-model="birthMonth">
+                            </label>
+                        </li>
+                        <li>
+                            <label>Birth year:
+                                <input type="number" ng-model="birthYear">
+                            </label>
+                        </li>
+                    </ul>
+                </label>
+                <button ng-show="userData.birthDay !== birthDay ||
+                        userData.birthMonth !== birthMonth ||
+                        userData.birthYear !== birthYear"
+                        ng-click="saveBirthdate()" type="button">Save
+                </button>
+                <h4 ng-if="birthdateMessage">{{birthdateMessage}}</h4>
+            </li>
+            <li><h4>Credit limit: {{userLimit}}</h4></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
